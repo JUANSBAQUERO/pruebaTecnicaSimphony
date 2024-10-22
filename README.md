@@ -1,64 +1,83 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Documentación de la API para gestionar usuarios y servicios.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este proyecto es un backend desarrollado con **NestJS** y **TypeScript** para gestionar servicios y asignarlos a usuarios. Implementa buenas prácticas de desarrollo, siguiendo una arquitectura modular y utilizando TypeORM para la interacción con una base de datos **PostgreSQL**.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+No dejo comando de migracion de db ya que el código esta con la sincorinización automatica, es decir, despues de la configuración inicial mencionada a continuación y ejecutado el comando para correr el servidor las tablas se van a generar automaticamente.
 
-## Description
+## Funcionalidades
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **Gestión de Usuarios**: Permite registrar y autenticar usuarios mediante JWT, asegurando el acceso a la API.
+- **Gestión de Servicios**: Proporciona endpoints para crear, listar y eliminar servicios, permitiendo la asignación de estos a los usuarios.
+- **Documentación de la API**: La API está documentada con **Swagger**, facilitando la interacción y pruebas de los endpoints.
+- **Eliminación Lógica**: Se utiliza un enfoque de eliminación lógica mediante el campo `deletedAt`, manteniendo un registro de los servicios eliminados sin perder información.
 
-## Project setup
+## Tecnologías Utilizadas
 
-```bash
-$ npm install
-```
+- **NestJS**: Framework para construir aplicaciones del lado del servidor.
+- **TypeScript**: Superset de JavaScript que agrega tipado estático.
+- **PostgreSQL**: Sistema de gestión de bases de datos relacional.
+- **TypeORM**: ORM que facilita la interacción con la base de datos.
+- **Swagger**: Herramienta para documentar y probar APIs REST.
 
-## Compile and run the project
+Este proyecto ha sido diseñado para cumplir con los requisitos establecidos en la prueba técnica, mostrando las habilidades necesarias para el desarrollo backend en un entorno profesional.
 
-```bash
-# development
-$ npm run start
+## Requisitos
 
-# watch mode
-$ npm run start:dev
+- Node.js (v22.0.0 o superior)
+- PostgreSQL
 
-# production mode
-$ npm run start:prod
-```
+## Pasos para clonar y ejecutar el proyecto
 
-## Run tests
+1. Clona el repositorio:
 
-```bash
-# unit tests
-$ npm run test
+   ```bash
+   git clone https://github.com/JUANSBAQUERO/pruebaTecnicaSimphony.git
 
-```
+2. Accede al directorio del proyecto:
 
-## Comandos para Correr Seeders
+  ```bash
+  cd pruebaTecnicaSimphony
 
-Para llenar la base de datos con datos iniciales, ejecuta el siguiente comando:
+3. En la raiz del proyecto crear un archivo .env con la siguiente estructura
 
-```bash
-ts-node seed.ts
+  ```bash
+  DB_HOST=valor
+  DB_PORT=valor
+  DB_USERNAME=valor
+  DB_PASSWORD=valor
+  DB_NAME=valor
+
+  JWT_SECRET=valor
+  JWT_EXPIRES_IN=1h
+
+  asegurate de tener una base de datos PostgreSQL limpia y que los valores se ajusten a la configuración de la misma.
 
 
+4. Intala las dependencias
+
+  ```bash
+  npm install 
+
+5. Ejecuta los seeders para cargar datos iniciales
+  Para llenar la base de datos con datos iniciales, ejecuta el siguiente comando:
+
+  ```bash
+  ts-node seed.ts
+
+6. Inicia el servidor
+
+  ```bash
+  npm run start:dev
+
+7. Si quiere correr las pruebas unitarias ejecutar:
+
+  ```bash
+  npm run test
+
+## Instrucciones para acceder a la documentación de Swagger
+
+Una vez que el servidor esté en ejecución, puedes acceder a la documentación de Swagger en la siguiente URL:
+
+  ```bash
+  http://localhost:3000/api
 
