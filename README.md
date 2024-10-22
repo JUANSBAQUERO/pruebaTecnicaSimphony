@@ -75,6 +75,6 @@ asegurate de tener una base de datos PostgreSQL limpia y que los valores se ajus
 
 Una vez que el servidor esté en ejecución, puedes acceder a la documentación de Swagger en la siguiente URL:
 
-   ``bash
+   ```bash
    http://localhost:3000/api
 
