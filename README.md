@@ -35,8 +35,8 @@ Este proyecto ha sido diseñado para cumplir con los requisitos establecidos en 
 
 2. Accede al directorio del proyecto:
 
-  ```bash
-  cd pruebaTecnicaSimphony
+   ```bash
+   cd pruebaTecnicaSimphony
 
 3. En la raiz del proyecto crear un archivo .env con la siguiente estructura
 
@@ -50,34 +50,32 @@ Este proyecto ha sido diseñado para cumplir con los requisitos establecidos en 
   JWT_SECRET=valor
   JWT_EXPIRES_IN=1h
 
-  asegurate de tener una base de datos PostgreSQL limpia y que los valores se ajusten a la configuración de la misma.
+asegurate de tener una base de datos PostgreSQL limpia y que los valores se ajusten a la configuración de la misma.
 
+4. Instala las dependencias
 
-4. Intala las dependencias
+   ```bash
+   npm install 
 
-  ```bash
-  npm install 
+5. Ejecuta los seeders para cargar datos iniciales. Para llenar la base de datos con datos iniciales, ejecuta el siguiente comando:
 
-5. Ejecuta los seeders para cargar datos iniciales
-  Para llenar la base de datos con datos iniciales, ejecuta el siguiente comando:
-
-  ```bash
-  ts-node seed.ts
+   ```bash
+   ts-node seed.ts
 
 6. Inicia el servidor
 
-  ```bash
-  npm run start:dev
+   ```bash
+   npm run start:dev
 
 7. Si quiere correr las pruebas unitarias ejecutar:
 
-  ```bash
-  npm run test
+   ```bash
+   npm run test
 
 ## Instrucciones para acceder a la documentación de Swagger
 
 Una vez que el servidor esté en ejecución, puedes acceder a la documentación de Swagger en la siguiente URL:
 
-  ```bash
-  http://localhost:3000/api
+   ``bash
+   http://localhost:3000/api
 
