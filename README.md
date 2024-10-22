@@ -40,15 +40,14 @@ Este proyecto ha sido diseñado para cumplir con los requisitos establecidos en 
 
 3. En la raiz del proyecto crear un archivo .env con la siguiente estructura
 
-  ```bash
-  DB_HOST=valor
-  DB_PORT=valor
-  DB_USERNAME=valor
-  DB_PASSWORD=valor
-  DB_NAME=valor
-
-  JWT_SECRET=valor
-  JWT_EXPIRES_IN=1h
+   ```bash
+   DB_HOST=valor
+   DB_PORT=valor
+   DB_USERNAME=valor
+   DB_PASSWORD=valor
+   DB_NAME=valor
+   JWT_SECRET=valor
+   JWT_EXPIRES_IN=1h
 
 asegurate de tener una base de datos PostgreSQL limpia y que los valores se ajusten a la configuración de la misma.
 
